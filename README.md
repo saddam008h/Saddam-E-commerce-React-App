@@ -5,7 +5,7 @@ A Ecommerce Website made with React.js.
 
 ## Demo
 
-https://saddamecommerce.vercel.app/
+https://saddamecommerce.netlify.app/
 
 ## Features
 
