@@ -1,5 +1,4 @@
 import React from "react";
-import { Footer, Navbar } from "../components";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 const Checkout = () => {
@@ -67,7 +66,7 @@ const Checkout = () => {
                   <h4 className="mb-0">Billing address</h4>
                 </div>
                 <div className="card-body">
-                  <form className="needs-validation" novalidate>
+                  <form className="needs-validation" noValidate>
                     <div className="row g-3">
                       <div className="col-sm-6 my-1">
                         <label for="firstName" className="form-label">
@@ -286,13 +285,13 @@ const Checkout = () => {
   };
   return (
     <>
-      <Navbar />
+    
       <div className="container my-3 py-3">
         <h1 className="text-center">Checkout</h1>
         <hr />
-        {state.length ? <ShowCheckout /> : <EmptyCart />}
+        {state?.length ? <ShowCheckout /> : <EmptyCart />}
       </div>
-      <Footer />
+     
     </>
   );
 };

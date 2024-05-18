@@ -1,12 +1,12 @@
 import React from "react";
 
-const Home = () => {
+const HeroSection = () => {
   return (
     <>
       <div className="hero border-1 pb-3">
         <div className="card bg-dark text-white border- mx-3">
           <div>
-         <video src="assets/man.mp4" controls={false} height={550} loop autoPlay muted className="w-100" style={{"object-fit":"fill"}} ></video>
+         <video role="video" src="assets/man.mp4" controls={false} height={550} loop autoPlay muted className="w-100" style={{"object-fit":"fill"}} ></video>
          </div>
           <div className="card-img-overlay d-flex align-items-end">
             <div className="container">
@@ -24,4 +24,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HeroSection;

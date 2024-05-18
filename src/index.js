@@ -5,14 +5,25 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Product from './pages/Product';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import Checkout from './pages/Checkout';
+import Products from './components/Products';
+import Home from './pages/Home';
+import Cart from './pages/Cart';
+import PageNotFound from './pages/PageNotFound';
 
 
-import { Home, Product, Products, AboutPage, ContactPage, Cart, Checkout, PageNotFound } from "./pages"
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Provider store={store}>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Products />} />
@@ -24,6 +35,7 @@ root.render(
         <Route path="*" element={<PageNotFound />} />
         <Route path="/product/*" element={<PageNotFound />} />
       </Routes>
+      <Footer/>
     </Provider>
   </BrowserRouter>
 );

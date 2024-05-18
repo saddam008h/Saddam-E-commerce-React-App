@@ -1,12 +1,12 @@
-import { Navbar, Main, Product, Footer } from "../components";
+import HeroSection from "../components/HeroSection"
+import Products from "../components/Products"
+import React from "react"
 
 function Home() {
   return (
     <>
-      <Navbar />
-      <Main />
-      <Product />
-      <Footer />
+      <HeroSection />
+      <Products />
     </>
   )
 }

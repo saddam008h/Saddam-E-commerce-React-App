@@ -23,9 +23,10 @@ const Products = () => {
     const getProducts = async () => {
       setLoading(true);
       const response = await fetch("https://fakestoreapi.com/products/");
+      const products = await response.json();
       if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
+        setData(products);
+        setFilter(products);
         setLoading(false);
       }
 
@@ -40,7 +41,7 @@ const Products = () => {
   const Loading = () => {
     return (
       <>
-        <div className="col-12 py-5 text-center">
+        <div data-testid="loading-skeleton" className="col-12 py-5 text-center">
           <Skeleton height={40} width={560} />
         </div>
         <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
@@ -84,18 +85,18 @@ const Products = () => {
 
         {filter.map((product) => {
           return (
-            <div id={product.id} key={product.id} className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
+            <div id={product.id} key={product.id} className="product-card col-md-4 col-sm-6 col-xs-8 col-12 mb-4">
               <div className="card text-center h-100" key={product.id}>
               
                 <img
                   className="card-img-top p-3"
                   src={product.image}
-                  alt="Card"
+                  alt={product.title}
                   height={300}
                 />
                 <div className="card-body">
                   <h5 className="card-title">
-                    {product.title.substring(0, 12)}...
+                    {product.title.substring(0, 15)}...
                   </h5>
                   <p className="card-text">
                     {product.description.substring(0, 90)}...
